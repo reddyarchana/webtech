@@ -1,0 +1,48 @@
+<!DOCTYPE html>      
+<html>
+<head>
+    <title>Canvas Web Page</title>
+    <style>
+        canvas {
+            display: block;
+            background-color: #f2f2f2;
+            margin:  auto;
+        
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="border: 2px solid red;"></canvas>
+    <script>
+        var canvas=document.getElementById("myCanvas");
+        var c=canvas.getContext("2d");
+        c.fillStyle="red";
+        c.fillRect(10,200,100,100);
+        c.beginPath();
+        c.moveTo(0,0);
+        c.lineTo(500,500);
+        c.strokeStyle = "black";
+        c.stroke();
+        c.font = "30px Arial";
+        c.fillText("CANVAS", 80, 50);
+        c.font="20px Arial";
+        c.strokeText("Elements", 180, 100);
+        c.beginPath();
+        c.arc(400, 60, 50, 0, 2 * Math.PI);
+        c.strokeStyle = "blue";
+        c.stroke();
+        c.beginPath();
+        c.moveTo(20,20);
+        c.moveTo(15,20);
+        c.lineTo(175,100);
+        c.lineTo(20,100);
+        c.lineTo(20,20);
+        c.stroke();
+        c.beginPath();
+        c.rect(60, 350, 150, 100);
+        c.stroke();
+    </script>
+</body>
+</html>
+        
+        

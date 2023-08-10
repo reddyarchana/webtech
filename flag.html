@@ -1,0 +1,34 @@
+
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>Flag Design</title>
+    <style>
+       canvas {
+            display: block;
+            background-color: #2f2e2e;
+            margin: auto;
+            border: 2px solid #e81313;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="700" style="border: 2px solid red;"></canvas>
+    <script>
+        var canvas=document.getElementById("myCanvas");
+        var c=canvas.getContext("2d");
+        c.fillStyle="red";
+        c.fillRect(150,50,230,150);
+        c.fillStyle="blue"
+        c.fillRect(150,100,230,80)
+        c.fillStyle="yellow"
+        c.fillRect(150,150,230,60)
+        c.fillStyle="black"
+        c.fillRect(150,50,3,800)
+        c.stroke();
+        
+</script>
+</body>
+</html>
+
+   
