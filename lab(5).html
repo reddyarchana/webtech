@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Interactive Web Page</title>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <style>
+ #animated-text {
+ font-size: 16px;
+ text-align: center;
+ }
+ .image{
+ width: 200px;
+ height: 200px;
+ padding-left: 20px;
+ }
+ #c1{
+ color:lightsalmon;
+ }
+ #container {
+ width: 300px;
+ height: 200px;
+ border:hidden;
+ text-align: center;
+ background-color:rgb(159, 226, 191);
+ border-radius: 15px;
+}
+
+ #text {
+  font-size: 16px;
+  padding: 20px;
+  color:black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+ #b1{
+ border-radius: 5px;
+ color: white;
+ background-color: burlywood;
+  border: hidden;
+  height: 25px;
+ }
+</style>
+</head>
+<body style="background-color:rgb(103, 103, 234);">
+ <center id="c1"><h1>Scoop-n-Smile</h1></center>
+ <div id="animated-text">
+ <p id="text-content">Ice Creamm......</p>
+ </div>
+ <nav><div style="float: right;">
+ <label for="imgs">What You would like to see? </label>
+ <button id="hide-images" style="border-radius: 5px;color:black;background-color:coral;box-shadow: 10 10 10px rgba(0, 0, 0, 0.2);">Hide Images</button>
+ <button id="show-images" style="border-radius: 5px;color:black;background-color:coral;box-shadow: 10 10 10px rgba(0, 0, 0, 0.2);">Show Images</button>
+ <button id="hide-video"style="border-radius: 5px;color:black;background-color:coral;box-shadow: 10 10 10px rgba(0, 0, 0, 0.2);">Hide Video</button>
+ <button id="show-video"style="border-radius: 5px;color:black;background-color:coral;box-shadow: 10 10 10px rgba(0, 0, 0, 0.2);">Show Video</button></select>
+ </div>
+</nav><br><br><br>
+ <div id="image-container">
+ <img src="mushroom.jpeg" alt="Image 1" class="image">
+  <img src="butterscotchice.jpeg" alt="Image 2" class="image">
+ <img src="strawberryice.jpeg" alt="Image 3" class="image">
+ <img src="vennelaice.jpeg" alt="Image 4" class="image">
+ <img src="panner.jpeg" alt="Image 5" class="image">
+ </div>
+ <fieldset style="border: hidden;">
+ <h2>Videos</h2>
+ <select id="video-selector">
+ <option value="video1.mp4">Video 1</option>
+ <option value="video2.mp4">Video 2</option>
+ <option value="video3.mp4">Video 3</option>
+ </select><br>
+<video id="video-player" muted controls style="width: 600px;">
+ <source src="w1.mp4" type="video/mp4">
+ </video>
+ <!-- Changing Size of the Area Using DIV -->
+<div style="float: right;" id="d1">
+ <div id="container">
+ <p id="text">Ice cream is a frozen dessert with origins dating back to ancient China, made from milk, sugar, and flavorings, later popularized in Europe and America.</p>
+</div><br>
+<center>
+ <button onclick="increaseSize()" id="b1">Increase Size</button>
+ <button onclick="decreaseSize()" id="b1">Decrease Size</button>
+</center>
+ </div>
+ </fieldset>
+<!-- Hiding and Showing Elements -->
+  <script>
+$(document).ready(function () {
+// Displaying Images with Custom Animated Effects
+$(".image").hover(function () {
+ $(this).fadeOut(200).fadeIn(500);
+});
+
+// Play Selected Video
+ $("#video-selector").change(function () {
+ var selectedVideo = $(this).val();
+ $("#video-player source").attr("src", selectedVideo);
+$("#video-player")[0].load();
+});
+
+// Animated Text with Increasing and Decreasing Font Size
+var fontSize = 16;
+ var textDirection = 1;
+ setInterval(function () {
+fontSize += textDirection;
+ if (fontSize === 32 || fontSize === 16) {
+textDirection *= -1;
+ }
+ $("#text-content").css("font-size", fontSize + "px");
+}, 500);
+ // Hiding and Showing Elements
+ $("#hide-images").click(function () {
+ $(".image").hide();
+ });
+
+ $("#show-images").click(function () {
+ $(".image").show();
+ });
+
+ $("#hide-video").click(function () {
+ $("#video-player").hide();
+ });
+
+ $("#show-video").click(function () {
+ $("#video-player").show();
+ });
+});
+</script>
+ <script>
+function increaseSize() {
+ var container = document.getElementById("container");
+ var text = document.getElementById("text");
+ var currentSize = parseInt(window.getComputedStyle(text, null).getPropertyValue('font-size'));
+ var newSize = currentSize + 2; // Increase font size by 2 pixels
+ text.style.fontSize = newSize + "px";
+ container.style.width = (container.offsetWidth + 20) + "px"; // Increase container width by 20 pixels
+ container.style.height = (container.offsetHeight + 20) + "px"; // Increase container height by 20 pixels
+ }
+
+ function decreaseSize() {
+ var container = document.getElementById("container");
+ var text = document.getElementById("text");
+ var currentSize = parseInt(window.getComputedStyle(text, null).getPropertyValue('font-size'));
+ var newSize = currentSize - 2; // Decrease font size by 2 pixels
+ text.style.fontSize = newSize + "px";
+ container.style.width = (container.offsetWidth - 20) + "px"; // Decrease container width by 20 pixels
+ container.style.height = (container.offsetHeight - 20) + "px"; // Decrease container height by 20 pixels
+ }
+</script> 
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        
+    </style>
+    <title>Document</title>
+</head>
+<body>
+      <h2>ondoubleclick</h2>
+      <p id="elm" ondblclick="changeColor()">Double click this element</p>
+      <button onmouseover="changeColor()" onmouseleave="reverseColor()" id="btn">Change Color</button>
+      <div onmouseenter="enterColor()" onmouseleave="leaveColor()" id="div">
+        <p>This is a onmouseleave</p>
+      </div>
+      <p draggable="true" ondrag="onDrag()" ondragstart="dragStart()" ondragend="dragEnd()">Drag me</p>
+      <textarea ondragenter="dragEnter()" ondragleave="dragLeave()" ondragover="dragOver(event)"></textarea>
+      <p id="output"></p>
+      <p oncopy="copy()">Copy me!</p>
+
+    <script>
+       function changeColor() {
+            document.getElementById("elm").style.color = "red";
+            document.getElementById("elm").style.fontSize = "25px";  
+            }
+            
+
+  function reverseColor() {
+    document.getElementById("btn").style.backgroundColor = "white";
+  }
+  function openPopup() {
+    document.getElementById("popup").style.display = "block";
+  }
+
+  function enterColor() {
+    document.getElementById("div").style.backgroundColor = "blue";
+  }
+  function leaveColor() {
+    document.getElementById("div").style.backgroundColor = "red";
+  }
+  const output = document.getElementById("output");
+  function onDrag() {
+    output.innerHTML += "Dragging...<br>";
+  }
+  function dragStart() {
+    output.innerHTML = "Dragging started...<br>";
+  }
+  function dragEnd() {
+    output.innerHTML += "Dragging ended...<br>";
+  }
+  function dragEnter() {
+    output.innerHTML += "Dragging entered...<br>";
+  }
+  function dragLeave() {
+    output.innerHTML += "Dragging left...<br>";
+  }
+  function copy() {
+    alert("Copied!");
+  }
+     </script>
+    
+    
+</body>
+</html>

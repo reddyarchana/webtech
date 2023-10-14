@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+    body{
+        background-color: tan;
+    }
+    .column {
+  float: left;
+  width: 30%;
+}
+#bb{
+   
+    float: right;
+   
+}
+ @media screen and (max-width: 600px) {
+  body {
+    background-color: blue;
+  font-size: small;
+  }
+}
+@media screen and (max-width: 700px) {
+  .column img {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 700px) {
+  .v3 video {
+    width: 15%;
+   float: left;
+   padding-left: 20px;
+   padding-top: 30px;
+  }
+}
+   </style>
+    <title>Mediaquery</title>
+</head>
+<body>
+    <h1 style="color: rgb(83, 226, 43);">This is a media query task</h1>
+    <p style="color: rgb(20, 255, 255);">A media query is an HTML/CSS functionality that allows the content of a Web page to adapt to the type of media that the page is being rendered in, such as a computer screen or that of a phone or tablet. </p>
+    <p style="font-size: large; color: red;">lest us insert an image in media query</p>
+    <div class="column">
+     <img src="nile.jpg">
+    </div>
+    <div class="v3">
+        <video id="bb" width="500" height="250" controls autoplay>
+                <source src="w1.mp4" type="video/mp4">
+                
+        </video>
+    </div>
+    
+
+
+</body>
+</html>

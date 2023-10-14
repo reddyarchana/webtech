@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">This method return length of a string </p>
+    <p id="dem">This is a slicing method</p>
+    <button onclick="myFunction()">Try it</button>
+    <p id="deo">Please visit Microsoft!</p>
+    <button onclick="myFunction()">Try it</button>
+<p id="disk">k.archanareddy</p>
+<p>used to push an item</p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+    <script>
+        let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length = text.length;
+document.getElementById("demo").innerHTML = text.length;
+
+let data = "Apple,Banana, Kiwi";
+let part = data.slice(4,13);
+document.getElementById("dem").innerHTML = part;
+
+function myFunction() {
+  let tet = document.getElementById("deo").innerHTML;
+  document.getElementById("deo").innerHTML =
+  tet.replace("Microsoft","Studentaffairs");
+  document.getElementById("deo").style.color = "orange";
+  document.getElementById("deo").style.fontSize="30px"
+}
+
+function myFunction() {
+  let tt = document.getElementById("disk").innerHTML;
+  document.getElementById("disk").innerHTML =
+  tt.toUpperCase();
+}
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+document.getElementById("demo1").innerHTML = fruits.push("Kiwi");
+document.getElementById("demo2").innerHTML = fruits;
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            color: blueviolet;
+            text-align: center;
+
+        }
+        fieldset{
+            display: inline-block;
+            text-align: left;
+        }
+    </style>
+    <title>lab3</title>
+</head>
+<body>
+    <div>
+    <h1 >REGISTRATION PAGE</h1>
+    <fieldset>
+    <form action="registersucces.html" target="_self"><br>
+       FIRSTNAME:<input type="text" id="name" name="username"><br><br>
+       <label for="FIRSTNAME"></label>
+       LASTNAME:<input type="text"><br><br>
+       <label for="LASTNAME"></label><br>
+       <label for="GENDER">GENDER:</label><br><br>
+       <input type="radio">Male 
+       <input type="radio">Female <br><br>
+       DATE OF BIRTH:<input type="date"><br>
+       <label for="DATE OF BIRTH"></label><br><br>
+       USERNAME:<input type="text" required placeholder="phone no or emailid"><br>
+       <label for="USERNAME"></label><br>
+       PASSWORD:<input type="password"  id="pwd" value="" maxlength="8" required>
+       <label for="PASSWORD"></label>
+       CONFIRM PASSWORD:<input type="password" id="cpwd" value="" maxlength="8">
+       <label for="CONFIRM PASSWORD" id="cpwd"></label><br><br>
+       ADDRESS:<br>
+       <textarea rows="5" cols="50" name="ADDRESS">ENTER ADDRESS HERE....</textarea><br><br>
+       POSTAL CODE:<input type="number" required>
+       <label for="POSTAL CODE"></label><br><br>
+       MOBILE NO:<input type="number" maxlength="10" required>
+       <label for="MOBILE NO"></label><br><br>
+       EMAIL ID:<input type="text" required placeholder="@gmail.com">
+       <label for="EMAIL ID"></label><br><br>
+       <center>
+        <input type="submit" name="create account" onclick="alert('confirm to create account')" value="CREATE ACCOUNT">
+     </center>
+
+</fieldset>
+    </div>
+</form>
+</body>
+</html>
